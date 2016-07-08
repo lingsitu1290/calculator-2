@@ -7,9 +7,9 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
-input_string  = 'Start'
+continue_on  = True
 
-while input_string[0] != 'False': 
+while continue_on == True: 
 
 
     # Your code goes here
@@ -17,35 +17,40 @@ while input_string[0] != 'False':
 
     input_string = calculate.split(" ")
 
+    if len (input_string) >= 2:
+        num1 = int(input_string[1])
+    if len(input_string) == 3:
+        num2 = int(input_string[2])
     #print input_string
 
     if input_string[0] == '+':
-        print add(int(input_string[1]), int(input_string[2]))
+        print add(num1,num2)
 
     elif input_string[0] == '-':
-        print subtract(int(input_string[1]), int(input_string[2]))
+        print subtract(num1,num2)
 
     elif input_string[0] == '*':
-        print multiply(int(input_string[1]), int(input_string[2]))
+        print multiply(num1,num2)
 
     elif input_string[0] == '/':
-        print divide(int(input_string[1]), int(input_string[2]))
+        print num1, num2
+        print divide(num1,num2)
 
     elif input_string[0] == 'square':
-        print square(int(input_string[1]))
+        print square(num1)
 
     elif input_string[0] == 'cube':
-        print cube(int(input_string[1]))
+        print cube(num1)
 
     elif input_string[0] == 'pow':
-        print power(int(input_string[1]), int(input_string[2]))
+        print power(num1,num2)
 
     elif input_string[0] == 'mod':
-        print mod(int(input_string[1]), int(input_string[2]))
+        print mod(num1,num2)
 
     elif input_string[0] == 'q':
         print "Goodbye"
-        input_string[0] = 'False'
+        continue_on = False
 
     else:
         print "You must have made error"
